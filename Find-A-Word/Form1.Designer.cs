@@ -32,9 +32,9 @@
             Word = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
             Addword = new Button();
             Deleteword = new Button();
+            OutputWindow = new TextBox();
             SuspendLayout();
             // 
             // Sentence
@@ -69,15 +69,6 @@
             label2.TabIndex = 3;
             label2.Text = "Word Textbox";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(516, 52);
-            label3.MinimumSize = new Size(150, 200);
-            label3.Name = "label3";
-            label3.Size = new Size(150, 200);
-            label3.TabIndex = 4;
-            // 
             // Addword
             // 
             Addword.Location = new Point(77, 163);
@@ -96,15 +87,25 @@
             Deleteword.TabIndex = 6;
             Deleteword.Text = "Delete Word";
             Deleteword.UseVisualStyleBackColor = true;
+            Deleteword.Click += Deleteword_Click;
+            // 
+            // OutputWindow
+            // 
+            OutputWindow.Location = new Point(557, 52);
+            OutputWindow.Multiline = true;
+            OutputWindow.Name = "OutputWindow";
+            OutputWindow.ReadOnly = true;
+            OutputWindow.Size = new Size(144, 168);
+            OutputWindow.TabIndex = 7;
             // 
             // FindAWord
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(OutputWindow);
             Controls.Add(Deleteword);
             Controls.Add(Addword);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(Word);
@@ -121,8 +122,8 @@
         private TextBox Word;
         private Label label1;
         private Label label2;
-        private Label label3;
         private Button Addword;
         private Button Deleteword;
+        private TextBox OutputWindow;
     }
 }
