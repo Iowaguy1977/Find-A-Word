@@ -13,7 +13,7 @@ namespace Find_A_Word
         public String AddWord(String InputString, String Inputword)
         {
             String Sentence = InputString;
-            String Word =" " + Inputword;
+            String Word = Inputword;
             String NewWord = "";
             Random random = new Random();
             int WordPlace = random.Next(0, Sentence.Length);
@@ -28,12 +28,12 @@ namespace Find_A_Word
                 {
                     if (Sentence[i] == ' ' )
                     {
-                        NewWord = Sentence.Insert(i, Word);
+                        NewWord = Sentence.Insert(i, " " + Word);
                         break;
                     }
                     else if (Sentence[i]=='.' || Sentence[i] == '?' || Sentence[i] == '!')
                     {
-                        NewWord = Sentence.Insert(i, Word);
+                        NewWord = Sentence.Insert(i," " + Word);
                         break;
                     }
                 }
@@ -49,7 +49,6 @@ namespace Find_A_Word
             String ConvertedSentence = InputString;
             String word = "";
             String _substring1 = "";
-            string _substring1dump = "";
             String _substring2 = "";
 
             for (int i = 0; i < ConvertedSentence.Length; i++)
@@ -64,23 +63,21 @@ namespace Find_A_Word
                 }
                 else
                 {
-                    //Checks to see if its the end of the string
+                    //Checks to see if its the end of the string.
                     if (i != ConvertedSentence.Length-1)
                     {
                         _substring1 = _substring1 + ConvertedSentence[i];
                     }
+                    //THis compares the word entered to the words entered in the sentence.
                     if (word == inputword)
                     {
                            
                             _substring2= ConvertedSentence.Substring(i, ConvertedSentence.Length - i);
-                            string Answer = ConvertedSentence.Remove(i - inputword.Length, inputword.Length);
+                            string Answer = ConvertedSentence.Remove(i - inputword.Length, inputword.Length+1);
                             ConvertedSentence = Answer;
                             _substring1 = "";
-
-
-                        i =i-inputword.Length-1;
-                        word = "";
-
+                            i = i - inputword.Length - 1;
+                            word = "";
                     }
                     else
                     {
@@ -88,7 +85,7 @@ namespace Find_A_Word
                     }
                 }
             }
-            return ConvertedSentence;
+          return ConvertedSentence;
         }
     }
 }
