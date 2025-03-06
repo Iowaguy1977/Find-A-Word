@@ -11,8 +11,16 @@ namespace Find_A_Word
 
         private void Addword_Click(object sender, EventArgs e)
         {
-            ConvertedSentence=StringMan.AddWord(Sentence.Text,Word.Text);
-            
+            ConvertedSentence = StringMan.AddWord(Sentence.Text, Word.Text);
+            OutputWindow.Text = ConvertedSentence;
+        }
+
+        private void Deleteword_Click(object sender, EventArgs e)
+        {
+            OutputWindow.Text = StringMan.DeleteWord(ConvertedSentence,Word.Text);
+            Sentence.Text = "";
+            Word.Text = "";
+            Sentence.Focus();
         }
     }
 }
