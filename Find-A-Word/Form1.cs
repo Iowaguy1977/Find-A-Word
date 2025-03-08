@@ -1,17 +1,19 @@
-namespace Find_A_Word
+namespace FindAWord
 {
-    public partial class FindAWord : Form
+    public partial class Form1 : Form
     {
         public string ConvertedSentence = "";
         StringManipulation StringMan = new StringManipulation();
-        public FindAWord()
+        public Form1()
         {
-            InitializeComponent();
+           InitializeComponent();
         }
 
         private void Addword_Click(object sender, EventArgs e)
         {
-            ConvertedSentence = StringMan.AddWord(Sentence.Text, Word.Text);
+            Random rnd = new Random();
+            int _addNumber = rnd.Next(0, Sentence.TextLength);
+            ConvertedSentence = StringMan.AddWord(Sentence.Text, Word.Text,_addNumber);
             OutputWindow.Text = ConvertedSentence;
         }
 
