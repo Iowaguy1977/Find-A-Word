@@ -9,7 +9,7 @@ namespace FindAWord
 {
     public class StringManipulation
     {
-
+        
         public String AddWord(String InputString, String Inputword, int _randomNum)
         {
             String Sentence = InputString;
