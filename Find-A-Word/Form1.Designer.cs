@@ -1,6 +1,6 @@
-﻿namespace Find_A_Word
+﻿namespace FindAWord
 {
-    partial class FindAWord
+    partial class Form1
     {
         /// <summary>
         ///  Required designer variable.
